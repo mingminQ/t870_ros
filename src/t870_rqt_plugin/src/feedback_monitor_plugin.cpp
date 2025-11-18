@@ -206,17 +206,13 @@ void t870_rqt_plugin::FeedbackMonitorPlugin::feedback_callback(
     const double steering_deg = msg->steering * 180.0 / M_PI;
     const QString steering_text = QString::number(steering_deg, 'f', 3) + " deg";
 
-    // Encoder
-    const int32_t encoder_count = msg->encoder_count;
-    const QString encoder_text = QString::number(encoder_count);
-
     // Heartbeat
     const uint8_t heartbeat = msg->heartbeat;
     const QString heartbeat_text = QString::number(heartbeat);
 
     QMetaObject::invokeMethod(widget_,
         [this, control_mode_text, emergency_stop_text, gear_text, speed_text, 
-            steering_text, encoder_text, heartbeat_text]()
+            steering_text, heartbeat_text]()
         {
             feedback_monitor_widget_->control_mode_text_box->setPlainText(control_mode_text);
             feedback_monitor_widget_->estop_text_box->setPlainText(emergency_stop_text);
@@ -224,8 +220,6 @@ void t870_rqt_plugin::FeedbackMonitorPlugin::feedback_callback(
 
             feedback_monitor_widget_->speed_text_box->setPlainText(speed_text);
             feedback_monitor_widget_->steering_text_box->setPlainText(steering_text);
-
-            feedback_monitor_widget_->encoder_text_box->setPlainText(encoder_text);
             feedback_monitor_widget_->heartbeat_text_box->setPlainText(heartbeat_text);
         }, 
         Qt::QueuedConnection
