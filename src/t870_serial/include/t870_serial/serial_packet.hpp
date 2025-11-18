@@ -68,31 +68,32 @@ namespace t870_serial
             SPEED_RAW_1    = 7,
             STEERING_100_0 = 8,
             STEERING_100_1 = 9,
-            ENCODER_0      = 10,
-            ENCODER_1      = 11,
-            ENCODER_2      = 12,
-            ENCODER_3      = 13,
-            HEARTBEAT      = 14,
-            ETX_0          = 15,
-            ETX_1          = 16,
-            PACKET_SIZE    = 17
+            HEARTBEAT      = 10,
+            ETX_0          = 11,
+            ETX_1          = 12,
+            PACKET_SIZE    = 13
 
         }; // enum ByteName
 
     } // namespace RX
 
     // Speed(m/s) -> Raw byte command
-    static constexpr double MPS2BYTE {1.0}; // TODO
+    //     60       1000
+    // ---------- * ---- = 5092.95817894 (R : 0.125)
+    // 2 * PI * R    15
+    static constexpr double MPS2BYTE {5092.95817894};
 
     // Steering(rad) -> Raw byte command
     static constexpr double RAD2BYTE {-5729.57795131};
 
     // Raw byte command -> Speed (m/s)
-    static constexpr double BYTE2MPS {1.0}; // TODO
+    // 2 * PI * R
+    // ---------- = 0.01308996939 (R : 0.125), (0.01308996939 * 15 / 1000) = 0.00019634954
+    //     60
+    static constexpr double BYTE2MPS {0.01308996939};
 
     // Raw byte command -> Steering (rad)
-    static constexpr double BYTE_STEERING_CENTER {500.0};
-    static constexpr double BYTE2RAD {-0.00116355283};
+    static constexpr double BYTE2RAD {0.00017453292};
 
 } // namespace t870_serial
 

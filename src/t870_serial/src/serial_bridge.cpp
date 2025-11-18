@@ -124,16 +124,7 @@ bool t870_serial::SerialBridge::receive_feedback()
     steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_0])      & 0xff  );
     steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_1] << 8) & 0xff00);
     steering_raw = 30000 < steering_raw ? steering_raw - 65536 : steering_raw;
-    feedback_msg.steering = 
-        (static_cast<double>(steering_raw) - BYTE_STEERING_CENTER) * BYTE2RAD;
-
-    // Encoder (rad)
-    int pulse_count = 0;
-    pulse_count |= static_cast<int>((rx_packet_[RX::ENCODER_0])       & 0xff      );
-    pulse_count |= static_cast<int>((rx_packet_[RX::ENCODER_1] << 8)  & 0xff00    );
-    pulse_count |= static_cast<int>((rx_packet_[RX::ENCODER_2] << 16) & 0xff0000  );
-    pulse_count |= static_cast<int>((rx_packet_[RX::ENCODER_3] << 24) & 0xff000000);
-    feedback_msg.encoder_count = -1.0 * static_cast<double>(pulse_count);
+    feedback_msg.steering = static_cast<double>(steering_raw) * BYTE2RAD - steering_offset_rad_;
 
     // Heartbeat
     feedback_msg.heartbeat = rx_packet_[RX::HEARTBEAT];
