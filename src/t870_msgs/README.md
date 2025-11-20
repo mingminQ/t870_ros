@@ -14,15 +14,15 @@ Henes T870 control command includes speed, steering
 
 ## Feedback.msg
 Feedback information from Henes T870
-| Field              | Type    | Unit                          | Description                                                                                                |
-| ------------------ | ------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **manual_mode**    | bool    | **Manual / Auto**             | Current control mode of the vehicle. **Ture** is **manual mode** and **false** is **auto mode**.           |
-| **emergency_stop** | bool    | **On / Off**                  | Current E-Stop mode of the vehicle. **Ture** is **E-Stop On** and **false** is **E-Stop Off**.             |
-| **gear**           | uint8   | **Drive / Neutral / Reverse** | Current gear of the vehicle. **Drive(0), Neutral(1), Reverse(2)**.                                         |
-| **speed**          | float64 | **m/s**                       | The vehicle's current linear speed.                                                                        |
-| **steering**       | float64 | **rad**                       | The vehicle's current steering angle, with **positive values for left** and **negative values for right.** |
-| **encoder_count**  | int     | **-2^31 - 2^31**              | The counter of the vehicle's wheel encoder. **PPR : 48**                                                   |
-| **heartbeat**      | uint8   | **0 - 255**                   | Used to check the vehicle's communication status and activate it. It is incremented by 1 every cycle.      |
+| Field              | Type    | Unit                             | Description                                                                                                |
+| ------------------ | ------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **manual_mode**    | bool    | **Manual / Auto**                | Current control mode of the vehicle. **Ture** is **manual mode** and **false** is **auto mode**.           |
+| **emergency_stop** | bool    | **On / Off**                     | Current E-Stop mode of the vehicle. **Ture** is **E-Stop On** and **false** is **E-Stop Off**.             |
+| **gear**           | uint8   | **Forward / Neutral / Backward** | Current gear of the vehicle. **Forward(0), Neutral(1), Backward(2)**.                                      |
+| **speed**          | float64 | **m/s**                          | The vehicle's current linear speed.                                                                        |
+| **steering**       | float64 | **rad**                          | The vehicle's current steering angle, with **positive values for left** and **negative values for right.** |
+| **encoder_count**  | int     | **-2^31 - 2^31**                 | The counter of the vehicle's wheel encoder. **PPR : 48**                                                   |
+| **heartbeat**      | uint8   | **0 - 255**                      | Used to check the vehicle's communication status and activate it. It is incremented by 1 every cycle.      |
 
 <br/>
 
