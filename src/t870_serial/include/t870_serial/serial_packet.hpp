@@ -78,22 +78,16 @@ namespace t870_serial
     } // namespace RX
 
     // Speed(m/s) -> Raw byte command
-    //     60
-    // ---------- = 76.3943726841 (R : 0.125)
-    // 2 * PI * R
-    static constexpr double MPS2BYTE {76.3943726841};
+    static constexpr double MPS2BYTE {555.555555556};
 
     // Steering(rad) -> Raw byte command
     static constexpr double RAD2BYTE {-5729.57795131};
 
     // Raw byte command -> Speed (m/s)
-    // 2 * PI * R
-    // ---------- = 0.01308996939 (R : 0.125), (0.01308996939 * 15 / 1000) = 0.00019634954
-    //     60
-    static constexpr double BYTE2MPS {0.01308996939};
+    static constexpr double BYTE2MPS {0.00019634954};
 
     // Raw byte command -> Steering (rad)
-    static constexpr double BYTE2RAD {0.00017453292};
+    static constexpr double BYTE2RAD {-0.00017453292};
 
 } // namespace t870_serial
 

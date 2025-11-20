@@ -384,6 +384,8 @@ void t870_rqt_plugin::ControlPanelPlugin::control_command_timer_callback()
     // Steering (rad)
     double steering_rad = control_panel_widget_->steering_spin_box->value() * M_PI / 180.0;
     control_command_msg_.steering = steering_rad;
+
+    control_command_pub_->publish(control_command_msg_);
 }
 
 #include <pluginlib/class_list_macros.hpp>

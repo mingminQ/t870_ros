@@ -114,15 +114,15 @@ bool t870_serial::SerialBridge::receive_feedback()
 
     // Speed (m/s)
     int speed_raw = 0;
-    speed_raw |= static_cast<int>((rx_packet_[RX::SPEED_RAW_0])      & 0xff  );
-    speed_raw |= static_cast<int>((rx_packet_[RX::SPEED_RAW_1] << 8) & 0xff00);
+    speed_raw |= static_cast<int>((rx_packet_[RX::SPEED_RAW_1])      & 0xff  );
+    speed_raw |= static_cast<int>((rx_packet_[RX::SPEED_RAW_0] << 8) & 0xff00);
     speed_raw  = 30000 < speed_raw ? speed_raw - 65536 : speed_raw;
     feedback_msg.speed = static_cast<double>(speed_raw) * BYTE2MPS;
 
     // Steering (rad)
     int steering_raw = 0;
-    steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_0])      & 0xff  );
-    steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_1] << 8) & 0xff00);
+    steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_1])      & 0xff  );
+    steering_raw |= static_cast<int>((rx_packet_[RX::STEERING_100_0] << 8) & 0xff00);
     steering_raw = 30000 < steering_raw ? steering_raw - 65536 : steering_raw;
     feedback_msg.steering = static_cast<double>(steering_raw) * BYTE2RAD - steering_offset_rad_;
 
@@ -227,7 +227,7 @@ void t870_serial::SerialBridge::control_command_callback(const t870_msgs::msg::C
 void t870_serial::SerialBridge::initialize_node()
 {
     // Timer
-    timer_ = this->create_wall_timer(50ms, std::bind(&SerialBridge::timer_callback, this));
+    timer_ = this->create_wall_timer(20ms, std::bind(&SerialBridge::timer_callback, this));
 
     // Publishers
     feedback_pub_ = this->create_publisher<t870_msgs::msg::Feedback>(

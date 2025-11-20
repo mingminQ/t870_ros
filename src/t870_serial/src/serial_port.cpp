@@ -198,7 +198,7 @@ void t870_serial::SerialPort::initialize_port()
     }
 
     tty.c_cc[VMIN]  = 13;
-    tty.c_cc[VTIME] = 1;
+    tty.c_cc[VTIME] = 0;
 
     if((tcsetattr(file_descriptor_, TCSANOW, &tty)) != 0)
     {
