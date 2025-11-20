@@ -227,7 +227,7 @@
        </rect>
       </property>
       <property name="maximum">
-       <number>55</number>
+       <number>16</number>
       </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -236,7 +236,7 @@
        <enum>QSlider::TicksBothSides</enum>
       </property>
       <property name="tickInterval">
-       <number>5</number>
+       <number>1</number>
       </property>
      </widget>
      <widget class="QDoubleSpinBox" name="speed_spin_box">
@@ -259,7 +259,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>5.50 m/s</string>
+       <string>1.6 m/s</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

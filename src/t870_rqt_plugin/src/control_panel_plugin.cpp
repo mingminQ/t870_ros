@@ -86,7 +86,7 @@ void t870_rqt_plugin::ControlPanelPlugin::initPlugin(qt_gui_cpp::PluginContext &
 
     bind_slider_spin_box(
         control_panel_widget_->speed_slider, control_panel_widget_->speed_spin_box,
-        0.0, 5.5, 0.1
+        0.0, 1.6, 0.1
     );
 
     bind_slider_spin_box(
