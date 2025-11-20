@@ -21,8 +21,5 @@ float64 speed
 # Steering angle (rad)
 float64 steering
 
-# Encoder count (-2^31 - 2^31)
-int32 encoder_count
-
 # Health check counter (0 - 255)
 uint8 heartbeat
