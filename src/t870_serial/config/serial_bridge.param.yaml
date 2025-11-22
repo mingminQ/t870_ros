@@ -8,6 +8,6 @@ serial_bridge:
     baud_rate: 115200
 
     # Henes T870 parameters
-    max_speed_mps      :  5.50 # m/s
-    max_steering_deg   : 20.00 # deg
+    max_speed_mps      :  1.60 # m/s
+    max_steering_deg   : 18.00 # deg
     steering_offset_deg:  0.00 # deg
