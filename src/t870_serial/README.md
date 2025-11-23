@@ -31,6 +31,6 @@ The ModeCommand.srv service QoS profile is the system default.
 | ----------------------- | ---- | ----------------------------------------------------------------------------------------------------- |
 | **port_path**           | -    | Serial port path ( e.g. /dev/ttyUSB0 )                                                                |
 | **baud_rate**           | -    | Serial communication speed. only 115200 or 9600 can be selected.                                      |
-| **max_speed_mps**       | m/s  | The vehicle's maximum linear speed. When using Auto mode, the PCU limits it to 20 km/h.               |
+| **max_speed_mps**       | m/s  | The vehicle's maximum linear speed. When using Auto mode, the PCU limits it to 1.60 m/s.              |
 | **max_steering_deg**    | deg  | The vehicle's maximum steering angle. Due to hardware limitations, 20 degrees or less is recommended. |
 | **steering_offset_deg** | deg  | Provides an offset to the steering angle. Left is positive (+), right is negative (-).                |

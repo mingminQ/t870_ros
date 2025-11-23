@@ -5,10 +5,10 @@ ERP42 Racing ROS2 communication interfaces
 
 ## ControlCommand.msg
 Henes T870 control command includes speed, steering
-| Field        | Type    | Unit        | Description                                                                                                                            |
-| ------------ | ------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **speed**    | float64 | **m/s**     | The linear speed of the vehicle. Negative values are not allowed. If reverse is required, the gear must be changed in ModeCommand.srv. |
-| **steering** | float64 | **rad**     | The steering angle of the vehicle. **Positive values are for the left side** and **negative values are for the right side.**           |
+| Field        | Type    | Unit        | Description                                                                                                                             |
+| ------------ | ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **speed**    | float64 | **m/s**     | The linear speed of the vehicle. Negative values are not allowed. If backward is required, the gear must be changed in ModeCommand.srv. |
+| **steering** | float64 | **rad**     | The steering angle of the vehicle. **Positive values are for the left side** and **negative values are for the right side.**            |
 
 <br/>
 
@@ -21,7 +21,6 @@ Feedback information from Henes T870
 | **gear**           | uint8   | **Forward / Neutral / Backward** | Current gear of the vehicle. **Forward(0), Neutral(1), Backward(2)**.                                      |
 | **speed**          | float64 | **m/s**                          | The vehicle's current linear speed.                                                                        |
 | **steering**       | float64 | **rad**                          | The vehicle's current steering angle, with **positive values for left** and **negative values for right.** |
-| **encoder_count**  | int     | **-2^31 - 2^31**                 | The counter of the vehicle's wheel encoder. **PPR : 48**                                                   |
 | **heartbeat**      | uint8   | **0 - 255**                      | Used to check the vehicle's communication status and activate it. It is incremented by 1 every cycle.      |
 
 <br/>
