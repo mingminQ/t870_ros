@@ -249,7 +249,7 @@ void t870_rqt_plugin::ControlPanelPlugin::on_apply_mode_command()
     }
 
     // Gear
-    if(control_panel_widget_->drive_button->isChecked())
+    if(control_panel_widget_->forward_button->isChecked())
     {
         mode_command_request->gear = t870_msgs::srv::ModeCommand::Request::GEAR_FORWARD;
     }
@@ -257,7 +257,7 @@ void t870_rqt_plugin::ControlPanelPlugin::on_apply_mode_command()
     {
         mode_command_request->gear = t870_msgs::srv::ModeCommand::Request::GEAR_NEUTRAL;
     }
-    else if(control_panel_widget_->reverse_button->isChecked())
+    else if(control_panel_widget_->backward_button->isChecked())
     {
         mode_command_request->gear = t870_msgs::srv::ModeCommand::Request::GEAR_BACKWARD;
     }

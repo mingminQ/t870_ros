@@ -94,7 +94,7 @@
      <property name="title">
       <string>Gear</string>
      </property>
-     <widget class="QRadioButton" name="reverse_button">
+     <widget class="QRadioButton" name="backward_button">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -104,10 +104,10 @@
        </rect>
       </property>
       <property name="text">
-       <string>Reverse</string>
+       <string>Backward</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="drive_button">
+     <widget class="QRadioButton" name="forward_button">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -117,7 +117,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Drive</string>
+       <string>Forward</string>
       </property>
      </widget>
      <widget class="QRadioButton" name="neutral_button">
@@ -259,7 +259,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>1.6 m/s</string>
+       <string>1.60 m/s</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
