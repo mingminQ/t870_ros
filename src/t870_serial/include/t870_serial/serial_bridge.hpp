@@ -103,11 +103,10 @@ namespace t870_serial
 
         /**
          * @brief Processes incoming control commands and updates the transmit packet.
-         * @param msg ControlCommand message containing desired speed (m/s), steering (rad), and brake (0–100).
+         * @param msg ControlCommand message containing desired speed (m/s), steering (rad).
          * @details
          *   - Clamps speed to [0, max_speed_mps_] and converts to raw units.  
          *   - Adjusts steering by offset, clamps to ±max_steering_rad_, and converts to raw units.  
-         *   - Inserts brake value directly into the packet.
          */
         void control_command_callback(const t870_msgs::msg::ControlCommand::SharedPtr msg);
 
